@@ -1,4 +1,4 @@
-import { useGetBooksQuery } from "./postSlice";
+import { useGetBooksQuery } from "./bookSlice";
 {
   /*import { useGetMeQuery } from "../auth/authSlice";*/
 }

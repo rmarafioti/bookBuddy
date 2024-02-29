@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "./layout/Root";
 import Home from "./layout/Home";
 import BookDetails from "./features/books/BookDetails";
-import AuthForm from "./features/auth/AuthForm";
+/*import AuthForm from "./features/auth/AuthForm";*/
 
 const router = createBrowserRouter([
   {
