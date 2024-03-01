@@ -1,26 +1,50 @@
+import React from "react";
 import { useGetBooksQuery } from "./bookSlice";
-{
-  /*import { useGetMeQuery } from "../auth/authSlice";*/
-}
 import { useParams } from "react-router-dom";
+import { Checkout } from "./Checkout";
+import { selectToken } from "../auth/authSlice";
+import { useSelector } from "react-redux";
 
 export default function BookDetails() {
-  const { data: books } = useGetBooksQuery();
-  /*const { data: me } = useGetMeQuery();*/
-
   const { id } = useParams();
+  const { data: books, isLoading, refetch } = useGetBooksQuery();
+  const token = useSelector(selectToken);
 
-  const post = books?.find((book) => book.id === id);
+  const book = books?.find((book) => book.id.toString() === id);
 
-  /*const isAuthor = me?._id === post?.author._id;*/
+  if (isLoading) {
+    return <h1>...Loading</h1>;
+  }
+
+  if (!book) {
+    return <h1>Book not found</h1>;
+  }
+
+  // Function to handle successful checkout, such as refetching book data
+  const handleCheckoutSuccess = () => {
+    refetch(); // Assuming useGetBooksQuery provides a refetch method
+    // Alternatively, implement other logic to update UI or state as needed
+  };
 
   /*return all the details for selected book and a button
    *to check book out if you are logged in
    */
   return (
     <>
-      <h1>{post?.title}</h1>
-      {isAuthor && <button>Delete</button>}
+      <img src={book.coverimage} />
+      <h3>{book.title}</h3>
+      <h3>{book.author}</h3>
+      <p>{book.description}</p>
+      <h2>
+        {book.available ? "Available for Checkout" : "Currently Checked Out"}
+      </h2>
+      {token && (
+        <Checkout
+          bookId={book.id}
+          isAvailable={book.available}
+          onCheckoutSuccess={handleCheckoutSuccess}
+        />
+      )}
     </>
   );
 }

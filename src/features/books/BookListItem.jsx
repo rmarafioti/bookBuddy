@@ -1,10 +1,25 @@
 import { Link } from "react-router-dom";
+import { useCheckoutBookMutation } from "./bookSlice";
 
 export default function BookListItem({ book }) {
+  const [checkoutBook, { isLoading: isCheckingOut }] =
+    useCheckoutBookMutation();
+
+  const handleCheckout = async () => {
+    try {
+      await checkoutBook({ id: book.id, available: false }).unwrap();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <li>
-      {/* link to individual book/ what is represented in a list item from the api?*/}
-      <Link to={"/books/" + book.id}>{book.title}</Link>
-    </li>
+    <div>
+      <li>
+        <h3>{book.title}</h3>
+        <h3>{book.author}</h3>
+        <Link to={`/books/${book.id}`}>See Details</Link>
+      </li>
+    </div>
   );
 }

@@ -14,7 +14,7 @@ export default function AuthForm() {
     : "Already have an account? Login here.";
 
   // Controlled form fields
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   // Form submission
@@ -28,7 +28,7 @@ export default function AuthForm() {
     evt.preventDefault();
 
     const authMethod = isLogin ? login : register;
-    const credentials = { username, password };
+    const credentials = { email, password };
 
     // We don't want to navigate if there's an error.
     // `unwrap` will throw an error if there is one
@@ -46,12 +46,12 @@ export default function AuthForm() {
       <h1>{authAction}</h1>
       <form onSubmit={attemptAuth}>
         <label>
-          Username
+          Email
           <input
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            autoComplete="username"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email"
           />
         </label>
         <label>
@@ -68,8 +68,8 @@ export default function AuthForm() {
       <a onClick={() => setIsLogin(!isLogin)}>{altCopy}</a>
 
       {(loginLoading || registerLoading) && <p>Please wait...</p>}
-      {loginError && <p role="alert">{loginError}</p>}
-      {registerError && <p role="alert">{registerError}</p>}
+      {loginError && <p role="alert">{loginError.message}</p>}
+      {registerError && <p role="alert">{registerError.message}</p>}
     </>
   );
 }

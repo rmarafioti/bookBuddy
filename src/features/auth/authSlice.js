@@ -13,27 +13,27 @@ const authApi = api.injectEndpoints({
       query: (credentials) => ({
         url: "/users/register",
         method: "POST",
-        body: { user: credentials },
+        body: credentials,
       }),
-      transformResponse: (response) => response.data,
-      transformErrorResponse: (response) => response.data.error.message,
+      transformErrorResponse: (response) => response.data.error?.message,
     }),
     login: builder.mutation({
       query: (credentials) => ({
         url: "/users/login",
         method: "POST",
-        body: { user: credentials },
+        body: credentials,
       }),
-      transformResponse: (response) => response.data,
-      transformErrorResponse: (response) => response.data.error.message,
+      transformErrorResponse: (response) => response.data.error?.message,
     }),
-    /*getMe: builder.query({
+    getUser: builder.query({
       query: () => "/users/me",
-    }),*/
+      transformResponse: (response) => response,
+    }),
   }),
 });
 
-export const { useRegisterMutation, useLoginMutation, useGetMeQuery } = authApi;
+export const { useRegisterMutation, useLoginMutation, useGetUserQuery } =
+  authApi;
 
 /** Session storage key for auth token */
 const TOKEN_KEY = "token";
