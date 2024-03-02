@@ -7,6 +7,7 @@ export default function BookListItem({ book }) {
 
   const handleCheckout = async () => {
     try {
+      preventDefault();
       await checkoutBook({ id: book.id, available: false }).unwrap();
     } catch (error) {
       console.error(error);
