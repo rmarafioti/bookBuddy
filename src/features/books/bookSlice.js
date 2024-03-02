@@ -17,11 +17,11 @@ const bookApi = api.injectEndpoints({
       transformResponse: (response) => response.books,
       transformErrorResponse: (response) => response.data.error.message,
     }),
-    //returns the detials of a single book
+    //returns the details of a single book
     getBook: builder.query({
-      query: (bookid) => `/books/${id}`,
+      query: (id) => "/books/" + id,
       providesTags: ["books"],
-      transformResponse: (response) => response.books,
+      transformResponse: (response) => response.book,
       transformErrorResponse: (response) => response.data.error.message,
     }),
     //returns a list of books the registered user has checked out

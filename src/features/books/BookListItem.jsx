@@ -5,18 +5,6 @@ export default function BookListItem() {
   const { id } = useParams();
   const { data: book } = useGetBookQuery(id);
 
-  /*const [checkoutBook, { isLoading: isCheckingOut }] =
-    useCheckoutBookMutation();*/
-
-  /*const handleCheckout = async () => {
-    try {
-      preventDefault();
-      await checkoutBook({ id: book.id, available: false }).unwrap();
-    } catch (error) {
-      console.error(error);
-    }
-  };*/
-
   return (
     <div>
       <li>
