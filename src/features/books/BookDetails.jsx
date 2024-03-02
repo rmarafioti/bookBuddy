@@ -1,11 +1,10 @@
 import React from "react";
 import { useCheckoutOrReturnBookMutation, useGetBookQuery } from "./bookSlice";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { selectToken } from "../auth/authSlice";
 import { useSelector } from "react-redux";
-
-import { Checkout } from "./Checkout";
 
 export default function BookDetails() {
   const { id } = useParams();
@@ -13,16 +12,10 @@ export default function BookDetails() {
   const token = useSelector(selectToken);
   const [checkOut] = useCheckoutOrReturnBookMutation();
 
-  /*const book = books?.find((book) => book.id.toString() === id);*/
-
   const resBook = async (e) => {
     e.preventDefault();
     checkOut(id);
   };
-
-  /*if (isLoading) {
-    return <h1>...Loading</h1>;
-  }*/
 
   if (!book) {
     return <h1>Book not found</h1>;
@@ -32,7 +25,7 @@ export default function BookDetails() {
     <>
       {book ? (
         <section>
-          <img src={book.coverimage} />
+          <img src={book.coverimage} alt="Book cover" />
           <h3>{book.title}</h3>
           <h3>{book.author}</h3>
           <p>{book.description}</p>
@@ -45,20 +38,15 @@ export default function BookDetails() {
       ) : (
         <p>Loading...</p>
       )}
+      {token ? (
+        book?.available === true ? (
+          <Link to={"/account"}>
+            <button onClick={resBook}>Checkout Book</button>
+          </Link>
+        ) : (
+          <p>Not Available at the Time</p>
+        )
+      ) : null}
     </>
   );
 }
-
-/*<img src={book.coverimage} />
-<h3>{book.title}</h3>
-<h3>{book.author}</h3>
-<p>{book.description}</p>
-<h2>
-  {book.available ? "Available for Checkout" : "Currently Checked Out"}
-</h2>
-{token && (
-  <Checkout
-    bookId={book.id}
-    isAvailable={book.available}
-  />
-)}*/

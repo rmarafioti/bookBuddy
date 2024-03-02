@@ -1,7 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
-/*import { useCheckoutBookMutation } from "./bookSlice";*/
+import { useCheckoutOrReturnBookMutation } from "./bookSlice";
+import { useParams } from "react-router-dom"
+
 import { selectToken } from "../auth/authSlice";
+import { useSelector } from "react-redux";
+
 
 /*checkout button needs be visable if the user is logged in which is verified by token
  *authetication.
@@ -9,18 +12,19 @@ import { selectToken } from "../auth/authSlice";
  *when clicked the button will checkout the book for the logged in user if the it is available.
  */
 
-export const Checkout = ({ bookId, isAvailable, onCheckoutSuccess }) => {
-  const [checkoutBook, { isLoading }] = useCheckoutBookMutation();
+export default function Checkout() {
+  const { id } = useParams();
   const token = useSelector(selectToken); // Check if the user is logged in
+  const [checkOut] = useCheckoutOrReturnBookMutation();
 
   const handleCheckout = async () => {
     // Check if the book is available and the user is logged in
     if (!isAvailable || !token) {
       alert("The book is not available for checkout or you must be logged in.");
       return;
-    }
+    };
 
-    try {
+    /*try {
       await checkoutBook({ id: bookId }).unwrap();
       // Notify the parent component (BookDetails) about the checkout success
       onCheckoutSuccess();
@@ -28,7 +32,7 @@ export const Checkout = ({ bookId, isAvailable, onCheckoutSuccess }) => {
       console.error("Failed to checkout the book:", error);
       alert("Failed to checkout the book. Please try again.");
     }
-  };
+  };*/
   return (
     <button
       onClick={handleCheckout}
@@ -37,4 +41,10 @@ export const Checkout = ({ bookId, isAvailable, onCheckoutSuccess }) => {
       {isLoading ? "Processing..." : "Check Out"}
     </button>
   );
-};
+}
+
+/*{token && (
+  <Checkout
+    bookId={book.id}
+    isAvailable={book.available}
+  />*/

@@ -27,18 +27,18 @@ const bookApi = api.injectEndpoints({
     //returns a list of books the registered user has checked out
     checkoutList: builder.query({
       query: () => "/reservations/",
-      provideTags: ["books"],
+      providesTags: ["books"],
       transformResponse: (response) => response.reservation,
     }),
     //registered user can checkout or return book with a valid token
     checkoutOrReturnBook: builder.mutation({
-      query: ({ bookid, available }) => ({
-        url: "/books/" + bookid,
+      query: (id) => ({
+        url: "/books/" + id,
         method: "PATCH",
-        body: available,
+        body: { available: false },
       }),
-      invalidateTags: ["books"],
-      transformErrorResponse: (response) => response.data.message,
+      invalidatesTags: ["books"],
+      transformResponse: (response) => response.book,
     }),
     //return checked out book
     deleteReservation: builder.mutation({
@@ -46,7 +46,7 @@ const bookApi = api.injectEndpoints({
         url: "/reservations/" + reservationid,
         method: "DELETE",
       }),
-      invalidateTags: ["books"],
+      invalidatesTags: ["books"],
       transformResponse: (response) => response.book,
     }),
   }),
