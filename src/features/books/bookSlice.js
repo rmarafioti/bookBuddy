@@ -54,6 +54,7 @@ const bookApi = api.injectEndpoints({
 
 export const {
   useGetBooksQuery,
+  useGetBookQuery,
   useCheckoutOrReturnBookMutation,
   useDeleteReservationMutation,
   useCheckoutListQuery,

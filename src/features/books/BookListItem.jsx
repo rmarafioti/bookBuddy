@@ -1,25 +1,27 @@
 import { Link } from "react-router-dom";
-import { useCheckoutBookMutation } from "./bookSlice";
+import { useGetBooksQuery } from "./bookSlice";
 
-export default function BookListItem({ book }) {
-  const [checkoutBook, { isLoading: isCheckingOut }] =
-    useCheckoutBookMutation();
+export default function BookListItem({ bookid }) {
+  const { data: books } = useGetBooksQuery();
 
-  const handleCheckout = async () => {
+  /*const [checkoutBook, { isLoading: isCheckingOut }] =
+    useCheckoutBookMutation();*/
+
+  /*const handleCheckout = async () => {
     try {
       preventDefault();
       await checkoutBook({ id: book.id, available: false }).unwrap();
     } catch (error) {
       console.error(error);
     }
-  };
+  };*/
 
   return (
     <div>
       <li>
-        <h3>{book.title}</h3>
-        <h3>{book.author}</h3>
-        <Link to={`/books/${book.id}`}>See Details</Link>
+        <h3>{books.title}</h3>
+        <h3>{books.author}</h3>
+        <Link to={`/books/${books.id}`}>See Details</Link>
       </li>
     </div>
   );
