@@ -15,21 +15,29 @@ export default function Navbar() {
 
   return (
     <nav>
-      <h1>{`BOOK BUDDY!`}</h1>
+      <header>{`BOOK BUDDY`}</header>
       <menu>
-        <li>
-          <NavLink to="/books">HOME</NavLink>
+        <li id="nav">
+          <NavLink id="menuItem" to="/books">
+            HOME
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/account">VIEW ACCOUNT</NavLink>
+        <li id="nav">
+          <NavLink id="menuItem" to="/account">
+            VIEW ACCOUNT
+          </NavLink>
         </li>
         {token ? (
-          <li>
-            <a onClick={handleLogout}>Log Out</a>
+          <li id="nav">
+            <a id="menuItem" onClick={handleLogout}>
+              Log Out
+            </a>
           </li>
         ) : (
-          <li>
-            <NavLink to="/login">Log In</NavLink>
+          <li id="nav">
+            <NavLink id="menuItem" to="/login">
+              Log In
+            </NavLink>
           </li>
         )}
       </menu>
