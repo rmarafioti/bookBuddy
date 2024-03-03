@@ -5,6 +5,10 @@
   border: 0px solid green;
 }
 
+#root {
+  margin: 0;
+}
+
 html, body {
   display: flex;
   flex-direction: column;
@@ -18,6 +22,8 @@ html, body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+/*nav bar styling*/
 
 nav {
   background: linear-gradient(0.25turn, #c8ccf6, white, white);
@@ -58,6 +64,8 @@ menu {
   border-radius: 15px;
 }
 
+/*book list styling*/
+
 #bookCard {
   color: rgb(69, 58, 135);
   margin: 2rem;
@@ -97,6 +105,57 @@ menu {
 }
 
 #seeDetails {
+  padding: .2rem;
+  text-align: center;
+  background-color: rgb(221, 129, 63);
+  border-radius: 10px;
+}
+
+/*book detials styling*/
+
+#bookDetails {
+  margin: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#imageAndDescrip {
+  display: flex;
+ width: 50%;
+  justify-content:flex-start;
+}
+
+#bookDescrip {
+  color: rgb(45, 31, 129);
+  padding: 1rem;
+  background-color: rgb(202, 216, 241);
+  border-radius: 20px;
+  margin: .5rem;
+}
+
+#bookStatus {
+  color: rgb(45, 31, 129);
+  text-align: center;
+}
+
+#availResSec {
+  margin-bottom: 2rem;
+}
+
+#availRes {
+  color: rgb(45, 31, 129);
+  text-align: center;
+}
+
+#button {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+button {
+  padding: .5rem;
   text-align: center;
   background-color: rgb(221, 129, 63);
   border-radius: 10px;
@@ -146,10 +205,3 @@ div {
   padding: .5rem;
   border-radius: 10px;
 }
-
-
-
-
-
-
-

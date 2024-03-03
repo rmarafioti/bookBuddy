@@ -22,31 +22,44 @@ export default function BookDetails() {
   }
 
   return (
-    <>
+    <main>
       {book ? (
-        <section>
-          <img src={book.coverimage} alt="Book cover" />
-          <h3>{book.title}</h3>
-          <h3>{book.author}</h3>
-          <p>{book.description}</p>
-          {book.available === true ? (
-            <p>Available for Checkout</p>
-          ) : (
-            <p>Not Available at This Time</p>
-          )}
-        </section>
+        <>
+          <section>
+            <div>
+              <h2 id="bookTitle">{book.title}</h2>
+              <h4 id="bookTitle">{book.author}</h4>
+            </div>
+            <div id="imageAndDescrip">
+              <img id="bookImage" src={book.coverimage} alt="Book cover" />
+              <p id="bookDescrip">{book.description}</p>
+            </div>
+          </section>
+          <section>
+            {book.available === true ? (
+              <p id="bookStatus">Available for Checkout</p>
+            ) : (
+              <p id="bookStatus">Someone is Currently Enjoying This Book</p>
+            )}
+          </section>
+        </>
       ) : (
         <p>Loading...</p>
       )}
+
       {token ? (
         book?.available === true ? (
           <Link to={"/account"}>
-            <button onClick={resBook}>Checkout Book</button>
+            <section id="button">
+              <button onClick={resBook}>Checkout Book</button>
+            </section>
           </Link>
         ) : (
-          <p>Not Available at the Time</p>
+          <section id="availResSec">
+            <p id="availRes">Not Available at the Time</p>
+          </section>
         )
       ) : null}
-    </>
+    </main>
   );
 }
