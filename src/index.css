@@ -18,30 +18,34 @@ html, body {
   font-style: normal;
  
   min-height: 100%;
+
   background: white;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 /*nav bar styling*/
-
+/*create breakpoint for navbar*/
 nav {
-  background: linear-gradient(0.25turn, #c8ccf6, white, white);
   display: flex;
   flex-direction: row;
+  justify-content:space-between;
+
+  background: linear-gradient(0.25turn, #c8ccf6, white, white);
+  list-style-type: none;
+  
   padding-right: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
   padding-top: 1rem;
-
-  list-style-type: none;
-  justify-content:space-between
 }
 
 header {
-  color: white;
   background-color: rgb(221, 129, 63);
+
+  color: white;
   font-size: 2rem;
+
   padding: 1rem;
   border-radius: 25px;
 }
@@ -49,17 +53,20 @@ header {
 menu {
   display: flex;
   flex-direction: row;
+
   list-style-type: none;
 }
 
 #nav {
   justify-content:space-between;
+
   padding-top: 2rem;
   padding-left: .5rem;
 }
 
 #menuItem {
   background-color: rgb(221, 129, 63);
+
   padding: .5rem;
   border-radius: 15px;
 }
@@ -67,27 +74,28 @@ menu {
 /*book list styling*/
 
 #bookCard {
-  color: rgb(69, 58, 135);
-  margin: 2rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; 
+
+  color: rgb(69, 58, 135);
+  margin: 2rem;
 }
 
 #books {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgb(202, 216, 241);
-  margin: 1rem;
-  text-align:center;
-  padding: 1.5rem;
-  list-style-type: none;
-
   flex: 1 1 150px;
   min-width: 200px;
   height: auto;
-  
+
+  background-color: rgb(202, 216, 241);
+  list-style-type: none;
+  text-align:center;
+
+  margin: 1rem;
+  padding: 1.5rem;
   border-radius: 25px;
 }
 
@@ -98,41 +106,43 @@ menu {
 }
 
 #bookImage {
+  filter: drop-shadow(2.5px 5px 5px rgb(46, 72, 117));
+  border-radius: 20px;
+
   margin: .5rem;
   max-width: 100%;
-  border-radius: 20px;
-  filter: drop-shadow(2.5px 5px 5px rgb(46, 72, 117))
 }
 
 #seeDetails {
-  padding: .2rem;
-  text-align: center;
   background-color: rgb(221, 129, 63);
+  text-align: center;
+
+  padding: .2rem;
   border-radius: 10px;
 }
 
 /*book detials styling*/
 
 #bookDetails {
-  margin: 1rem;
-
   display: flex;
   flex-direction: column;
+
+  margin: 1rem;
   text-align: center;
 }
 
 #imageAndDescrip {
   display: flex;
- width: 50%;
   justify-content:flex-start;
+  width: 50%;
 }
 
 #bookDescrip {
   color: rgb(45, 31, 129);
-  padding: 1rem;
   background-color: rgb(202, 216, 241);
   border-radius: 20px;
   margin: .5rem;
+  padding: 1rem;
 }
 
 #bookStatus {
@@ -155,17 +165,17 @@ menu {
 }
 
 button {
-  padding: .5rem;
-  text-align: center;
   background-color: rgb(221, 129, 63);
+  text-align: center;
+  padding: .5rem;
   border-radius: 10px;
 }
 
 /*account details styling*/
 
 #accountDetails {
- margin: 2rem;
  justify-content:center;
+ margin: 2rem;
  padding: 1rem;
 }
 
@@ -179,15 +189,14 @@ div {
 }
 
 #accountEmail, #reservations {
-  color: rgb(45, 31, 129);
   background-color: rgb(202, 216, 241);
+  color: rgb(45, 31, 129);
   padding: 1.5rem;
   border-radius: 15px;
 }
 
 #underline {
   text-decoration: underline;
-
 }
 
 #reservationInfo {
@@ -199,8 +208,8 @@ div {
 }
 
 #returnBook {
-  color: white;
   background-color: rgb(221, 129, 63);
+  color: white;
   margin: .5rem;
   padding: .5rem;
   border-radius: 10px;
