@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid green;
+  border: 0px solid green;
 }
 
 html, body {
@@ -15,13 +15,13 @@ html, body {
   font-style: normal;
  
   min-height: 100%;
-  background: linear-gradient(0.25turn, #b5b9df, #d0d6e4, #d7dce6);
+  background: white;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 nav {
-  background-color: aliceblue;
+  background: linear-gradient(0.25turn, #c8ccf6, white, white);
   display: flex;
   flex-direction: row;
   padding-right: 1rem;
@@ -35,7 +35,7 @@ nav {
 
 header {
   color: white;
-  background-color: chocolate;
+  background-color: rgb(221, 129, 63);
   font-size: 2rem;
   padding: 1rem;
   border-radius: 25px;
@@ -54,12 +54,13 @@ menu {
 }
 
 #menuItem {
-  background-color: chocolate;
+  background-color: rgb(221, 129, 63);
   padding: .5rem;
   border-radius: 15px;
 }
 
 #bookCard {
+  color: rgb(69, 58, 135);
   margin: 2rem;
   display: flex;
   flex-direction: row;
@@ -70,23 +71,34 @@ menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: aqua;
+  background-color: rgb(202, 216, 241);
   margin: 1rem;
-  text-align:justify;
-  padding: 1rem;
+  text-align:center;
+  padding: 1.5rem;
   list-style-type: none;
 
   flex: 1 1 150px;
-  min-width: 100px;
-  max-width: 200px;
-  height: 200px;
-
+  min-width: 200px;
+  height: auto;
+  
   border-radius: 25px;
+}
+
+#bookTitle {
+  color: rgb(45, 31, 129);
+  line-height: 1;;
+}
+
+#bookImage {
+  margin: .5rem;
+  max-width: 100%;
+  border-radius: 20px;
+  filter: drop-shadow(2.5px 5px 5px rgb(46, 72, 117))
 }
 
 #seeDetails {
   text-align: center;
-  background-color: chocolate;
+  background-color: rgb(221, 129, 63);
   border-radius: 10px;
 }
 

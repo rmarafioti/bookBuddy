@@ -7,8 +7,9 @@ import { Link } from "react-router-dom";
 function BookCard({ book }) {
   return (
     <li id="books">
-      <p>{book.title}</p>
-      <h3>{book.author}</h3>
+      <h2 id="bookTitle">{book.title}</h2>
+      <h5>{book.author}</h5>
+      <img id="bookImage" src={book.coverimage} alt="Book cover" />
       <Link id="seeDetails" to={`/books/${book.id}`}>
         See Details
       </Link>
