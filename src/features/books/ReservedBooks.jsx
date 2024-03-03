@@ -9,10 +9,12 @@ export default function ReservedBooks({ reservation }) {
   };
 
   return (
-    <li>
+    <li id="reservationInfo">
       <h3>{reservation.title}</h3>
-      <h4>{reservation.author}</h4>
-      <button onClick={resDelete}>Return Book</button>
+      <h5 id="author">{reservation.author}</h5>
+      <button id="returnBook" onClick={resDelete}>
+        Return Book
+      </button>
     </li>
   );
 }

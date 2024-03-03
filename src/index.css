@@ -8,7 +8,6 @@
 html, body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -86,7 +85,8 @@ menu {
 
 #bookTitle {
   color: rgb(45, 31, 129);
-  line-height: 1;;
+  line-height: 1;
+  padding-bottom: .5rem;
 }
 
 #bookImage {
@@ -99,6 +99,51 @@ menu {
 #seeDetails {
   text-align: center;
   background-color: rgb(221, 129, 63);
+  border-radius: 10px;
+}
+
+/*account details styling*/
+
+#accountDetails {
+ margin: 2rem;
+ justify-content:center;
+ padding: 1rem;
+}
+
+#accountInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+div {
+  margin: 1rem;
+}
+
+#accountEmail, #reservations {
+  color: rgb(45, 31, 129);
+  background-color: rgb(202, 216, 241);
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+
+#underline {
+  text-decoration: underline;
+
+}
+
+#reservationInfo {
+  list-style-type: none;
+}
+
+#author, #email {
+  color: rgb(69, 58, 135);
+}
+
+#returnBook {
+  color: white;
+  background-color: rgb(221, 129, 63);
+  margin: .5rem;
+  padding: .5rem;
   border-radius: 10px;
 }
 

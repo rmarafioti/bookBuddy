@@ -8,16 +8,23 @@ export default function AccountDetails() {
   const { data: reservations } = useCheckoutListQuery();
 
   return (
-    <>
-      <h1>Account Details</h1>
-      <p>EMAIL: {regUser?.email}</p>
-      {reservations ? (
-        reservations.map((reservation) => (
-          <ReservedBooks key={reservation.id} reservation={reservation} />
-        ))
-      ) : (
-        <p>Nothing Reserved</p>
-      )}
-    </>
+    <main id="accountDetails">
+      <section id="accountInfo">
+        <div id="accountEmail">
+          <h1 id="underline">Account Details</h1>
+          <p id="email">EMAIL: {regUser?.email}</p>
+        </div>
+        <div id="reservations">
+          <h2 id="underline">Reservations: </h2>
+          {reservations ? (
+            reservations.map((reservation) => (
+              <ReservedBooks key={reservation.id} reservation={reservation} />
+            ))
+          ) : (
+            <p>Nothing Reserved</p>
+          )}
+        </div>
+      </section>
+    </main>
   );
 }
