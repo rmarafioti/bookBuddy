@@ -40,6 +40,12 @@ nav {
   padding-top: 1rem;
 }
 
+@media (max-width: 592px) {
+  nav {
+      display:inline-block;
+      flex-direction: column;}
+}
+
 header {
   background-color: rgb(221, 129, 63);
 
