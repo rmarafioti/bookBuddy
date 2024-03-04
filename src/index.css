@@ -79,6 +79,14 @@ menu {
 
 /*book list styling*/
 
+form {
+  margin: 1rem;
+}
+
+#search, #searchClear {
+  margin: .5rem;
+}
+
 #bookCard {
   display: flex;
   flex-direction: row;
