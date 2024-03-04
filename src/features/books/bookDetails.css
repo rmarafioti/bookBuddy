@@ -1,0 +1,50 @@
+/*book details styling*/
+
+#bookDetails {
+    display: flex;
+    flex-direction: column;
+  
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  #imageAndDescrip {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+  }
+  
+  #bookDescrip {
+    color: rgb(45, 31, 129);
+    background-color: rgb(202, 216, 241);
+    border-radius: 20px;
+    margin: .5rem;
+    padding: 1rem;
+  }
+  
+  #bookStatus {
+    color: rgb(45, 31, 129);
+    text-align: center;
+  }
+  
+  #availResSec {
+    margin-bottom: 2rem;
+  }
+  
+  #availRes {
+    color: rgb(45, 31, 129);
+    text-align: center;
+  }
+  
+  #button {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    background-color: rgb(221, 129, 63);
+    text-align: center;
+    padding: .5rem;
+    border-radius: 10px;
+  }

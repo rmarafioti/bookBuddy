@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { selectToken } from "../auth/authSlice";
 import { useSelector } from "react-redux";
 
+import "./bookDetails.css";
+
 /*return all info about the selected book via get book query
  *if the book's availability is true notify the user the book is available
  *else notify the user the book has been checked out
