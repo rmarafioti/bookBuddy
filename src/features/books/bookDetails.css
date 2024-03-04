@@ -11,8 +11,17 @@
   #imageAndDescrip {
     display: flex;
     justify-content: space-between;
-    width: 50%;
-    margin: auto;
+  }
+
+  @media (max-width: 900px) {
+    #imageAndDescrip {
+        display:inline-block;
+        flex-direction: column;}
+  }
+
+  #bookImage {
+    max-width: 100%;
+    height: auto;
   }
   
   #bookDescrip {
@@ -21,6 +30,9 @@
     border-radius: 20px;
     margin: .5rem;
     padding: 1rem;
+
+    max-width: 100%;
+    height: auto;
   }
   
   #bookStatus {
