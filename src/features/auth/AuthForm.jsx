@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation, useRegisterMutation } from "./authSlice";
 
+import "./authForm.css";
+
 /** This form allows users to register or log in. */
 export default function AuthForm() {
   const navigate = useNavigate();
@@ -45,25 +47,27 @@ export default function AuthForm() {
     <>
       <h1>{authAction}</h1>
       <form onSubmit={attemptAuth}>
-        <label>
+        <label id="email">
           Email
           <input
+            id="inputBar"
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             autoComplete="email"
           />
         </label>
-        <label>
+        <label id="password">
           Password
           <input
+            id="inputBar"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
           />
         </label>
-        <button>{authAction}</button>
+        <button id="logIn">{authAction}</button>
       </form>
       <a onClick={() => setIsLogin(!isLogin)}>{altCopy}</a>
 

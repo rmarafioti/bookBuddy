@@ -34,15 +34,12 @@ nav {
   background: linear-gradient(0.25turn, #c8ccf6, white, white);
   list-style-type: none;
   
-  padding-right: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-top: 1rem;
+  padding: 1rem;
 }
 
-@media (max-width: 592px) {
+@media (max-width: 655px) {
   nav {
-      display:inline-block;
+      display: inline-block;
       flex-direction: column;}
 }
 
@@ -61,6 +58,12 @@ menu {
   flex-direction: row;
 
   list-style-type: none;
+}
+
+@media (max-width: 655px) {
+  menu {
+      display: inline-block;
+      flex-direction: column;}
 }
 
 #nav {
