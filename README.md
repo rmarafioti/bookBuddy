@@ -10,4 +10,7 @@ Once all the changes were made I merged my branch back to main and moved forward
 
 Overall I am happy I was able to achieve the functionality that the project asked for and create a styled look with css knowledge I've gained from styling other past projects.
 
-Things I would add or improve upon:
+Things I would add or improve upon for better user experience:
+
+-Change the color of the text when the available staus is true
+-dipsplay a message that the user needs to be logged in to check out a book, this message should also be a link to the authform

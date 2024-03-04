@@ -46,11 +46,17 @@ export default function BookDetails() {
             </div>
           </section>
           <section>
-            {book.available === true ? (
-              <p id="bookStatus">Available for Checkout</p>
-            ) : (
-              <p id="bookStatus">Someone is Currently Enjoying This Book</p>
-            )}
+            <p
+              className={
+                book.available
+                  ? "bookStatus-available"
+                  : "bookStatus-unavailable"
+              }
+            >
+              {book.available
+                ? "Available for Checkout"
+                : "Someone is Currently Enjoying This Book"}
+            </p>
           </section>
         </>
       ) : (

@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 /*return a list of all the books in the api via get books query
  *create a function to display characteristics for each book in the BookList to be displayed
  *each book has a Link to route the user to see more details about the book
+ *create a search bar to filter though the list of books from the api that are fetched in *this file
+ *search should be functional by displaying the books that are searched via the search bar
+ *account for upper and lower case search inputs
+ *user should be able to naviagate back to the full list of books
  */
 
 function BookCard({ book }) {
@@ -52,7 +56,7 @@ export default function BookList() {
     <main id="bookList">
       <form onSubmit={handleSubmit}>
         <input
-          type="search"
+          id="searchBox"
           name="search"
           value={search}
           placeholder="Search..."

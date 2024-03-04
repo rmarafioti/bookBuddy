@@ -41,6 +41,16 @@
   #availResSec {
     margin-bottom: 2rem;
   }
+
+  .bookStatus-available {
+    color: rgb(45, 31, 129); /* Same as #bookDescrip color */
+    text-align: center;
+  }
+
+  .bookStatus-unavailable {
+    color: grey;
+    text-align: center;
+  }
   
   #availRes {
     color: grey; /*,ake color of text change when book is available*/
