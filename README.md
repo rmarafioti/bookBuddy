@@ -12,5 +12,4 @@ Overall I am happy I was able to achieve the functionality that the project aske
 
 Things I would add or improve upon for better user experience:
 
--Change the color of the text when the available staus is true
 -dipsplay a message that the user needs to be logged in to check out a book, this message should also be a link to the authform
