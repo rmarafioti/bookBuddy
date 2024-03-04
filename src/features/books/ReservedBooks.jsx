@@ -1,5 +1,10 @@
 import { useDeleteReservationMutation } from "./bookSlice";
 
+/*Reserved book component is a childs component of the account details component
+ *create a function to return a list with some info about a reserved book
+ *&& a button to delete reserved book via delete reservation mutation
+ */
+
 export default function ReservedBooks({ reservation }) {
   const [deleteReservation] = useDeleteReservationMutation();
 

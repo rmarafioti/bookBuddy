@@ -2,6 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectToken, logout } from "../features/auth/authSlice";
 import { NavLink, useNavigate } from "react-router-dom";
 
+/*Nav bar component which will be visible in each child component of our root
+ *nav bar holds links so the user can navigate to each child component from any view of the app
+ */
+
 export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();

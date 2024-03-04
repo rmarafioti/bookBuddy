@@ -1,9 +1,11 @@
 import { useGetBooksQuery } from "./bookSlice";
 import { Link } from "react-router-dom";
 
-/*BookCard function to display characteristics for each book
- *in the BookList
+/*return a list of all the books in the api via get books query
+ *create a function to display characteristics for each book in the BookList to be displayed
+ *each book has a Link to route the user to see more details about the book
  */
+
 function BookCard({ book }) {
   return (
     <li id="books">
@@ -23,7 +25,6 @@ export default function BookList() {
   return (
     <main id="bookList">
       <ul id="bookCard">
-        {/*map over list of books to display BookCard function */}
         {books?.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}

@@ -3,7 +3,7 @@
  *checkout book: use patch
  *return book: use DELETE
  *look at documentation for transform response nested object elements
- *look at documentation for transform error response "
+ *look at documentation for transform error response
  */
 
 import api from "../../store/api";
