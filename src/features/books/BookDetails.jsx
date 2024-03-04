@@ -22,7 +22,7 @@ export default function BookDetails() {
   }
 
   return (
-    <main>
+    <main id="bookDetails">
       {book ? (
         <>
           <section>
