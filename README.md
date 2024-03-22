@@ -1,6 +1,6 @@
 Book Buddy Project:
 
-I started this project by creating a wireframe for the ui which I then broke down to a wireframe representing state, app components, their paths and how component information is retrived or changed via the book buddy api.
+I started this project by creating a wireframe for the ui which I then broke down to a wireframe representing state, app components, their paths and how component information is retrieved or changed via the book buddy api.
 
 After the initial set up of files and path functionality I ran into some trouble with my code. Using source code, documentation and some help from chapGPT I ended up with an app that functioned 90% but was not refetching by utilizing 'provideTags' and "invalidatesTag'. This made it so I had to refresh the page when I changed view or deleted a reservation. My intuition was that I had too much code that was not doing what it needed to do properly.
 

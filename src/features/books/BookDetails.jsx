@@ -23,13 +23,8 @@ export default function BookDetails() {
   const [checkOut] = useCheckoutOrReturnBookMutation();
 
   const resBook = async (e) => {
-    e.preventDefault();
     checkOut(id);
   };
-
-  if (!book) {
-    return <h1>Book not found</h1>;
-  }
 
   return (
     <main id="bookDetails">

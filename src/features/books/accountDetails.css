@@ -1,46 +1,47 @@
 /*account details styling*/
 
 #accountDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media (max-width: 592px) {
+  #accountDetails {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  @media (max-width: 592px) {
-    #accountDetails {
-      display: flex;
-      flex-direction: column;
-      margin: 1rem;
-      padding: 0.5rem;
-    }
-  }
-  
-  #accountEmail, #reservations {
-    background-color: rgb(202, 216, 241);
-    color: rgb(45, 31, 129);
-
+    flex-direction: column;
     margin: 1rem;
-    padding: 1.5rem;
-    border-radius: 15px;
+    padding: 0.5rem;
   }
-  
-  #underline {
-    text-decoration: underline;
-  }
-  
-  #reservationInfo {
-    list-style-type: none;
-  }
-  
-  #author, #email {
-    color: rgb(69, 58, 135);
-  }
-  
-  #returnBook {
-    background-color: rgb(221, 129, 63);
-    color: white;
-    margin: .5rem;
-    padding: .5rem;
-    border-radius: 10px;
-  }
-  
+}
+
+#accountEmail,
+#reservations {
+  background-color: rgb(202, 216, 241);
+  color: rgb(45, 31, 129);
+
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+#reservationInfo {
+  list-style-type: none;
+}
+
+#author,
+#email {
+  color: rgb(69, 58, 135);
+}
+
+#returnBook {
+  background-color: rgb(221, 129, 63);
+  color: white;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+}

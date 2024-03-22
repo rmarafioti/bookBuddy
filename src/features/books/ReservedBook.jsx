@@ -5,7 +5,7 @@ import { useDeleteReservationMutation } from "./bookSlice";
  *&& a button to delete reserved book via delete reservation mutation
  */
 
-export default function ReservedBooks({ reservation }) {
+export default function ReservedBook({ reservation }) {
   const [deleteReservation] = useDeleteReservationMutation();
 
   const resDelete = async (e) => {

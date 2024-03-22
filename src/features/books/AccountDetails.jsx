@@ -1,6 +1,5 @@
-import React from "react";
 import { useCheckoutListQuery } from "./bookSlice";
-import ReservedBooks from "./ReservedBooks";
+import ReservedBook from "./ReservedBook";
 import { useGetUserQuery } from "../auth/authSlice";
 
 import "./accountDetails.css";
@@ -17,14 +16,14 @@ export default function AccountDetails() {
   return (
     <main id="accountDetails">
       <section id="accountEmail">
-        <h1 id="underline">Account Details</h1>
+        <h1 class="underline">Account Details</h1>
         <p id="email">EMAIL: {regUser?.email}</p>
       </section>
       <section id="reservations">
-        <h2 id="underline">Reservations: </h2>
-        {reservations ? (
+        <h2 class="underline">Reservations: </h2>
+        {reservations.length ? (
           reservations.map((reservation) => (
-            <ReservedBooks key={reservation.id} reservation={reservation} />
+            <ReservedBook key={reservation.id} reservation={reservation} />
           ))
         ) : (
           <p>Nothing Reserved</p>

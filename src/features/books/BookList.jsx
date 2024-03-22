@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useGetBooksQuery } from "./bookSlice";
 import { Link } from "react-router-dom";
 
-/*return a list of all the books in the api via get books query
- *create a function to display characteristics for each book in the BookList to be displayed
- *each book has a Link to route the user to see more details about the book
- *create a search bar to filter though the list of books from the api that are fetched in *this file
- *search should be functional by displaying the books that are searched via the search bar
- *account for upper and lower case search inputs
- *user should be able to naviagate back to the full list of books
+/**
+ *
+ * @function BookCard
+ * @param {Object} book
+ * @returns a single book from the API as a list item displaying the book's title, author, image and a link to see more details of the book.
+ *
  */
 
 function BookCard({ book }) {
@@ -16,13 +15,23 @@ function BookCard({ book }) {
     <li id="books">
       <h2 id="bookTitle">{book.title}</h2>
       <h5 id="author">{book.author}</h5>
-      <img id="bookImage" src={book.coverimage} alt="Book cover" />
+      <img
+        id="bookImage"
+        src={book.coverimage}
+        alt={`cover image of ${book.title}`}
+      />
       <Link id="seeDetails" to={`/books/${book.id}`}>
         See Details
       </Link>
     </li>
   );
 }
+
+/**
+ *
+ * @component BookList displays a search bar, all books from the API via useGetBooksQuery and displays an informative list of them using the BookCard function.
+ *
+ */
 
 export default function BookList() {
   const { data: books } = useGetBooksQuery();
@@ -32,6 +41,12 @@ export default function BookList() {
   const handleSubmit = async (e) => {
     e.preventDefault();
   };
+
+  /**
+   *
+   * @description useEffect creates functionality to the search bar by filtering though the list of books from the API that are fetched in this file. The search accounts for upper and lowercase inputs and displays the books that are searched via the search bar. The user is also directed back to the full list of books when the search bar is cleared.
+   *
+   */
 
   useEffect(() => {
     if (search.trim() === "") {
@@ -46,6 +61,12 @@ export default function BookList() {
       setSearchBooks(results);
     }
   }, [books, search]);
+
+  /**
+   *
+   * @description handleClearSearch directs back to the full list of books when the search bar is cleared.
+   *
+   */
 
   const handleClearSearch = () => {
     setSearch("");
@@ -70,8 +91,8 @@ export default function BookList() {
         </button>
       </form>
       <ul id="bookCard">
-        {searchBooks && searchBooks.length > 0 ? (
-          searchBooks?.map((book) => <BookCard key={book.id} book={book} />)
+        {searchBooks?.length ? (
+          searchBooks.map((book) => <BookCard key={book.id} book={book} />)
         ) : (
           <p>No books found.</p>
         )}
