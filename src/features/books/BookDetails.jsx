@@ -8,12 +8,12 @@ import { useSelector } from "react-redux";
 
 import "./bookDetails.css";
 
-/*return all info about the selected book via get book query
- *if the book's availability is true notify the user the book is available
- *else notify the user the book has been checked out
- *if the user is logged in via token authentication &&
- *the book is available give the user the option to check the book out via checkout mutation
- *if the book is not available notify the user they can't check the book out.
+/**
+ *
+ * @component BookDetails displays all info about the selected book via useGetBookQuery.
+ * If the book's availability is true notify the user the book is available else notify the user the book has been checked out.
+ * If the user is logged in via token authentication & the book is available give the user the option to check the book out via useCheckoutOrReturnBookMutation.
+ * If the book is not available notify the user they can't check the book out.
  */
 
 export default function BookDetails() {
