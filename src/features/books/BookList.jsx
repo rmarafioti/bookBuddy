@@ -29,7 +29,8 @@ function BookCard({ book }) {
 
 /**
  *
- * @component BookList displays a search bar, all books from the API via useGetBooksQuery and displays an informative list of them using the BookCard function.
+ * @component BookList
+ * @returns a search bar, all books from the API via useGetBooksQuery and displays an informative list of them using the BookCard function.
  *
  */
 
