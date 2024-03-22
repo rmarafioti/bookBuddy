@@ -1,8 +1,10 @@
-/*api file is copy paste boilerplate
- *except for base URL in api documentation
- *do not add "/" to end of base url
- */
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+/**
+ *
+ * @description api links API to the baseUrl in API documentation
+ *
+ */
 
 const api = createApi({
   baseQuery: fetchBaseQuery({

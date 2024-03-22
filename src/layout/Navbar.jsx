@@ -2,15 +2,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectToken, logout } from "../features/auth/authSlice";
 import { NavLink, useNavigate } from "react-router-dom";
 
-/*Nav bar component which will be visible in each child component of our root
- *nav bar holds links so the user can navigate to each child component from any view of the app
+/**
+ *
+ * @component NavBar is universal on every view via it's place in Root.jsx
+ * @returns a list of NavLinks so the user can navigate to each child component from any view of the app and displays the users logged in / logged out status
  */
 
 export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  /**
+   *
+   * @description token checks if the users has a token and is in turn logged in.
+   *
+   */
+
   const token = useSelector(selectToken);
+
+  /**
+   *
+   * @description handleLogout allows the user the logged in user to logout of their account.
+   *
+   */
 
   const handleLogout = async () => {
     await dispatch(logout());

@@ -5,7 +5,10 @@ import BookDetails from "./features/books/BookDetails";
 import AuthForm from "./features/auth/AuthForm";
 import AccountDetails from "./features/books/AccountDetails";
 
-//define paths to each component / view in the app
+/**
+ *
+ * @description router defines paths to each component / view in the app.
+ */
 
 const router = createBrowserRouter([
   {
