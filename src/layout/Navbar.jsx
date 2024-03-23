@@ -14,7 +14,7 @@ export default function Navbar() {
 
   /**
    *
-   * @description token checks if the users has a token and is in turn logged in.
+   * @description token checks if the user has a token and is in turn logged in.
    *
    */
 
@@ -22,7 +22,7 @@ export default function Navbar() {
 
   /**
    *
-   * @description handleLogout allows the user the logged in user to logout of their account.
+   * @description handleLogout allows the logged in user to logout of their account.
    *
    */
 

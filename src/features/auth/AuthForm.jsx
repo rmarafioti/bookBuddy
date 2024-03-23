@@ -4,7 +4,7 @@ import { useLoginMutation, useRegisterMutation } from "./authSlice";
 
 import "./authForm.css";
 
-/** This form allows users to register or log in. */
+/** @component AuthForm - This form allows users to register or log in. */
 export default function AuthForm() {
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ export default function AuthForm() {
   const [register, { isLoading: registerLoading, error: registerError }] =
     useRegisterMutation();
 
-  /** Send the requested authentication action to the API */
+  /** @description attemptAuth - Send the requested authentication action to the API */
   const attemptAuth = async (evt) => {
     evt.preventDefault();
 

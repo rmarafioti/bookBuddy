@@ -2,9 +2,9 @@ import { useDeleteReservationMutation } from "./bookSlice";
 
 /**
  *
- * @component ReserveredBook child component AccountDetails component
+ * @component ReserveredBook child component of the AccountDetails component
  * @param {Object} reservation - the book that has been checked out by the user
- * @returns a list with some info about a reserved book & a button to delete reserved book via useDeleteReservationMutation.
+ * @returns a list with some info about a reserved book & a button for the user to delete reserved book via useDeleteReservationMutation.
  */
 
 export default function ReservedBook({ reservation }) {

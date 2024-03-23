@@ -6,7 +6,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import api from "../../store/api";
 
-/** Authentication endpoints */
+/** @description authApi - Authentication endpoints */
+
 const authApi = api.injectEndpoints({
   endpoints: (builder) => ({
     register: builder.mutation({
@@ -35,7 +36,7 @@ const authApi = api.injectEndpoints({
 export const { useRegisterMutation, useLoginMutation, useGetUserQuery } =
   authApi;
 
-/** Session storage key for auth token */
+/** @description TOKEN_KEY - Session storage key for auth token */
 const TOKEN_KEY = "token";
 
 /** Reducer that stores payload's token in state and session storage */
@@ -44,14 +45,14 @@ const storeToken = (state, { payload }) => {
   sessionStorage.setItem(TOKEN_KEY, payload.token);
 };
 
-/** Keeps track of JWT sent from API */
+/** @description authSlice Keeps track of JWT sent from API */
 const authSlice = createSlice({
   name: "auth",
   initialState: {
     token: sessionStorage.getItem(TOKEN_KEY),
   },
   reducers: {
-    /** Logging out means wiping the stored token */
+    /** @description logout - Logging out means wiping the stored token */
     logout: (state) => {
       state.token = null;
       sessionStorage.removeItem(TOKEN_KEY);

@@ -7,7 +7,7 @@ import "./accountDetails.css";
 /**
  *
  * @component AccountDetails
- * @returns a list of the registered user's info via useGetUserQuery
+ * @returns A list of the registered user's info via useGetUserQuery
  * A list of user's reserved books via useCheckoutListQuery if there are any.
  *
  */
