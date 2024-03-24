@@ -17,7 +17,15 @@ form {
 h1 {
   color: rgb(45, 31, 129);
   margin: 1rem;
+  /*text-align: center;*/
 }
+
+@media (max-width: 655px) {
+  h1, #message {
+    text-align: center;
+  }
+}
+
 
 #email,
 #password {

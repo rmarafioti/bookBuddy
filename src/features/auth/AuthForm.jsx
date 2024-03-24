@@ -69,7 +69,9 @@ export default function AuthForm() {
         </label>
         <button id="logIn">{authAction}</button>
       </form>
-      <a onClick={() => setIsLogin(!isLogin)}>{altCopy}</a>
+      <div id="message">
+        <a onClick={() => setIsLogin(!isLogin)}>{altCopy}</a>
+      </div>
 
       {(loginLoading || registerLoading) && <p>Please wait...</p>}
       {loginError && <p role="alert">{loginError.message}</p>}
