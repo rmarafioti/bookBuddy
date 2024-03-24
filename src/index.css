@@ -45,6 +45,26 @@ nav {
   }
 }
 
+#hamMenu {
+  display: none;
+}
+
+@media (max-width: 655px) {
+  #hamMenu {
+    display: block;
+  }
+.menu {
+  display: none;
+}
+.menu.active {
+  display: block;
+  flex-direction: row;
+  position: absolute; /* Dropdown effect */
+  width: 100%; /* Full width */
+  /* Additional styles for the active menu */
+}
+}
+
 header {
   background-color: rgb(221, 129, 63);
 
@@ -62,12 +82,12 @@ menu {
   list-style-type: none;
 }
 
-@media (max-width: 655px) {
+/*@media (max-width: 655px) {
   menu {
     display: inline-block;
     flex-direction: column;
   }
-}
+}*/
 
 #nav {
   justify-content: space-between;
@@ -81,6 +101,24 @@ menu {
 
   padding: 0.5rem;
   border-radius: 15px;
+}
+
+@media (max-width: 655px) {
+  #nav {
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .menu.active #menuItem {
+    font-size: .8rem;
+    background-color: transparent; 
+    padding: 0;
+    margin: 0;
+    text-align: left; 
+  }
+}
+
+#hamMenu {
+  margin-top: .5rem;
 }
 
 /*book list styling*/

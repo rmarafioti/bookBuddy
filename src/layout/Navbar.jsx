@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken, logout } from "../features/auth/authSlice";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -31,10 +32,16 @@ export default function Navbar() {
     navigate("/");
   };
 
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
   return (
     <nav>
       <header>{`BOOK BUDDY`}</header>
-      <menu>
+      <div id="hamMenu" onClick={() => setMenuOpen(!menuOpen)}>
+        &#9776;
+      </div>
+      {/* Wrap NavLinks in a div for easier targeting */}
+      <menu className={`menu ${menuOpen ? "active" : ""}`}>
         <li id="nav">
           <NavLink id="menuItem" to="/books">
             HOME
