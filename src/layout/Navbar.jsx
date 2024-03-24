@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken, logout } from "../features/auth/authSlice";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 
 /**
  *
@@ -12,6 +12,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   /**
    *
@@ -32,6 +33,11 @@ export default function Navbar() {
     navigate("/");
   };
 
+  // Close the menu upon route changes
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]); // Depend on pathname, so it triggers on route change
+
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
@@ -49,7 +55,7 @@ export default function Navbar() {
         </li>
         <li id="nav">
           <NavLink id="menuItem" to="/account">
-            VIEW ACCOUNT
+            ACCOUNT
           </NavLink>
         </li>
         {token ? (
