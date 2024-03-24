@@ -12,18 +12,22 @@ import { Link } from "react-router-dom";
 
 function BookCard({ book }) {
   return (
-    <li id="books">
-      <h2 id="bookTitle">{book.title}</h2>
-      <h5 id="author">{book.author}</h5>
-      <img
-        id="bookImage"
-        src={book.coverimage}
-        alt={`cover image of ${book.title}`}
-      />
-      <Link id="seeDetails" to={`/books/${book.id}`}>
-        See Details
-      </Link>
-    </li>
+    <section>
+      <li id="books">
+        <h4 id="bookTitle">{book.title}</h4>
+        <h5 id="author">{book.author}</h5>
+        <img
+          id="bookImage"
+          src={book.coverimage}
+          alt={`cover image of ${book.title}`}
+        />
+      </li>
+      <div>
+        <Link id="seeDetails" to={`/books/${book.id}`}>
+          See Details
+        </Link>
+      </div>
+    </section>
   );
 }
 
