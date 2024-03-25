@@ -27,6 +27,16 @@ body {
 
 /*nav bar styling*/
 
+header {
+  background-color: rgb(221, 129, 63);
+
+  color: white;
+  font-size: 2rem;
+
+  padding: 1rem;
+  border-radius: 25px;
+}
+
 nav {
   display: flex;
   flex-direction: row;
@@ -44,6 +54,29 @@ nav {
     flex-direction: column;
   }
 }
+
+menu {
+  display: flex;
+  flex-direction: row;
+
+  list-style-type: none;
+}
+
+#menuItem {
+  background-color: rgb(221, 129, 63);
+
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+#nav {
+  justify-content: space-between;
+
+  padding-top: 2rem;
+  padding-left: 0.5rem;
+}
+
+/*hamburger menu styling*/
 
 #hamMenu {
   display: none;
@@ -65,37 +98,6 @@ nav {
   }
 }
 
-header {
-  background-color: rgb(221, 129, 63);
-
-  color: white;
-  font-size: 2rem;
-
-  padding: 1rem;
-  border-radius: 25px;
-}
-
-menu {
-  display: flex;
-  flex-direction: row;
-
-  list-style-type: none;
-}
-
-#nav {
-  justify-content: space-between;
-
-  padding-top: 2rem;
-  padding-left: 0.5rem;
-}
-
-#menuItem {
-  background-color: rgb(221, 129, 63);
-
-  padding: 0.5rem;
-  border-radius: 15px;
-}
-
 @media (max-width: 655px) {
   .menu {
     display: none;
@@ -114,7 +116,7 @@ menu {
   }
 }
 
-/*book list styling*/
+/*search bar styling*/
 
 form {
   margin: 1rem;
@@ -131,6 +133,8 @@ form {
   padding: 0.3rem;
   border-radius: 8px;
 }
+
+/*book list styling*/
 
 #bookCard {
   display: flex;
