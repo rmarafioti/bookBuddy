@@ -12,7 +12,6 @@ import { NavLink, useNavigate, useLocation } from "react-router-dom";
 export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation();
 
   /**
    *
@@ -33,12 +32,25 @@ export default function Navbar() {
     navigate("/");
   };
 
-  // Close the menu upon route changes
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
+  /**
+   *
+   * @description location checks the status of the view on the page to reset hamburger.
+   *
+   */
+
+  const location = useLocation();
+
+  /**
+   *
+   * @description hamburger menu is set closed, if open and the view path changes hambergur menu will set to closed again.
+   *
+   */
+
   useEffect(() => {
     setMenuOpen(false);
-  }, [location.pathname]); // Depend on pathname, so it triggers on route change
-
-  const [menuOpen, setMenuOpen] = React.useState(false);
+  }, [location.pathname]);
 
   return (
     <nav>
@@ -46,7 +58,6 @@ export default function Navbar() {
       <div id="hamMenu" onClick={() => setMenuOpen(!menuOpen)}>
         &#9776;
       </div>
-      {/* Wrap NavLinks in a div for easier targeting */}
       <menu className={`menu ${menuOpen ? "active" : ""}`}>
         <li id="nav">
           <NavLink id="menuItem" to="/books">
