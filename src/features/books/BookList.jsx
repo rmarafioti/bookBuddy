@@ -41,31 +41,25 @@ function BookCard({ book }) {
 export default function BookList() {
   const { data: books } = useGetBooksQuery();
   const [search, setSearch] = useState("");
-  const [searchBooks, setSearchBooks] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
   };
 
+  const searchLower = search.trim().toLocaleLowerCase();
   /**
    *
-   * @description useEffect creates functionality to the search bar by filtering though the list of books from the API that are fetched in this file. The search accounts for upper and lowercase inputs and displays the books that are searched via the search bar. The user is also directed back to the full list of books when the search bar is cleared.
+   * @description searchBooks creates functionality to the search bar by filtering though the list of books from the API that are fetched in this file. The search accounts for upper and lowercase inputs and displays the books that are searched via the search bar. The user is also directed back to the full list of books when the search bar is cleared.
    *
    */
-
-  useEffect(() => {
-    if (search.trim() === "") {
-      setSearchBooks(books);
-    } else {
-      const searchLower = search.toLowerCase();
-      const results = books?.filter(
-        (book) =>
-          book.title.toLowerCase().includes(searchLower) ||
-          book.author.toLowerCase().includes(searchLower)
-      );
-      setSearchBooks(results);
-    }
-  }, [books, search]);
+  const searchBooks =
+    searchLower === ""
+      ? books
+      : books?.filter(
+          (book) =>
+            book.title.toLowerCase().includes(searchLower) ||
+            book.author.toLowerCase().includes(searchLower)
+        );
 
   /**
    *
@@ -75,7 +69,6 @@ export default function BookList() {
 
   const handleClearSearch = () => {
     setSearch("");
-    setFilteredBooks(books);
   };
 
   return (
