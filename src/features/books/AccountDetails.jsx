@@ -24,7 +24,7 @@ export default function AccountDetails() {
       </section>
       <section id="reservations">
         <h2 class="underline">Reservations: </h2>
-        {reservations.length ? (
+        {reservations?.length ? (
           reservations.map((reservation) => (
             <ReservedBook key={reservation.id} reservation={reservation} />
           ))
