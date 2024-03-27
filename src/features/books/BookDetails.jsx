@@ -59,19 +59,17 @@ export default function BookDetails() {
         <p>Loading...</p>
       )}
 
-      {token ? (
-        book?.available === true ? (
-          <Link to={"/account"}>
-            <section id="button">
-              <button onClick={resBook}>Checkout Book</button>
-            </section>
-          </Link>
-        ) : (
-          <section id="availResSec">
-            <p id="availRes">Not Available at the Time</p>
+      {token && book?.available === true ? (
+        <Link to={"/account"}>
+          <section id="button">
+            <button onClick={resBook}>Checkout Book</button>
           </section>
-        )
-      ) : null}
+        </Link>
+      ) : (
+        <section id="availResSec">
+          <p id="availRes">Not Available at the Time</p>
+        </section>
+      )}
     </main>
   );
 }
