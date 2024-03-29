@@ -65,8 +65,12 @@ export default function BookDetails() {
             <button onClick={resBook}>Checkout Book</button>
           </section>
         </Link>
+      ) : book?.available ? (
+        <section id="availRes">
+          <Link to="/login">You must be logged in to checkout a book</Link>
+        </section>
       ) : (
-        <section id="availResSec">
+        <section id="button">
           <p id="availRes">Not Available at the Time</p>
         </section>
       )}
