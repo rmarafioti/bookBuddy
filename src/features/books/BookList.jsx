@@ -81,12 +81,14 @@ export default function BookList() {
           placeholder="Search..."
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button id="search" type="submit">
-          Search
-        </button>
-        <button id="searchClear" type="button" onClick={handleClearSearch}>
-          Clear
-        </button>
+        <div>
+          <button id="search" type="submit">
+            Search
+          </button>
+          <button id="searchClear" type="button" onClick={handleClearSearch}>
+            Clear
+          </button>
+        </div>
       </form>
       <ul id="bookCard">
         {searchBooks?.length ? (

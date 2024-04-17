@@ -13,9 +13,17 @@
 }
 
 @media (max-width: 900px) {
-  #imageAndDescrip {
-    display: inline-block;
+  #bookDetailsContainer {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  #imageAndDescrip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 

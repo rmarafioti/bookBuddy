@@ -31,7 +31,7 @@ export default function BookDetails() {
     <main id="bookDetails">
       {book ? (
         <>
-          <section>
+          <section id="bookDetailsContainer">
             <div>
               <h2 id="bookTitle">{book.title}</h2>
               <h4 id="bookTitle">{book.author}</h4>
