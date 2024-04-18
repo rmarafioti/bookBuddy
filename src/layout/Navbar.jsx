@@ -64,11 +64,14 @@ export default function Navbar() {
             HOME
           </NavLink>
         </li>
-        <li id="nav">
-          <NavLink id="menuItem" to="/account">
-            ACCOUNT
-          </NavLink>
-        </li>
+
+        {token && (
+          <li id="nav">
+            <NavLink id="menuItem" to="/account">
+              ACCOUNT
+            </NavLink>
+          </li>
+        )}
         {token ? (
           <li id="nav">
             <a id="menuItem" onClick={handleLogout}>
