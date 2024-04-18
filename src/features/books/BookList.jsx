@@ -82,11 +82,11 @@ export default function BookList() {
           onChange={(e) => setSearch(e.target.value)}
         />
         <div>
-          <button id="search" type="submit">
+          {/*<button id="search" type="submit">
             Search
-          </button>
+  </button>*/}
           <button id="searchClear" type="button" onClick={handleClearSearch}>
-            Clear
+            Clear Search
           </button>
         </div>
       </form>
