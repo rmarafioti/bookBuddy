@@ -67,11 +67,11 @@ export default function BookDetails() {
         </Link>
       ) : book?.available ? (
         <section id="availRes">
-          <Link to="/login">You must be logged in to checkout a book</Link>
+          <Link to="/login">You must be logged in to check a book out</Link>
         </section>
       ) : (
         <section id="button">
-          <p id="availRes">Not Available at the Time</p>
+          <p id="availRes">Not Available at This Time</p>
         </section>
       )}
     </main>
